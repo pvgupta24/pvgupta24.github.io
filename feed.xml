@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://pvgupta24.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://pvgupta24.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2018-06-09T04:04:39+05:30</updated><id>https://pvgupta24.github.io/</id><title type="html">Praveen Gupta</title><subtitle>Personal Website of Praveen Kumar Gupta, computer engineering student of National Institute of Technology, Karnataka to showcase life experiences and other views.
+</subtitle><author><name>Praveen Gupta</name><email>pvgupta24@gmail.com</email></author><entry><title type="html">Phase 1 - Displaying Transcription Subtitles</title><link href="https://pvgupta24.github.io/2018/06/02/phase-1/" rel="alternate" type="text/html" title="Phase 1 - Displaying Transcription Subtitles" /><published>2018-06-02T00:00:00+05:30</published><updated>2018-06-02T00:00:00+05:30</updated><id>https://pvgupta24.github.io/2018/06/02/phase%201</id><content type="html" xml:base="https://pvgupta24.github.io/2018/06/02/phase-1/">&lt;p&gt;The first phase for the GSoC 2018 is coming to an end.
+Let me share my experience and contributions so far with this blog post :)&lt;/p&gt;
+
+&lt;h2 id=&quot;what-did-i-work-on-&quot;&gt;What did I work on ?&lt;/h2&gt;
+&lt;p&gt;My main task in this phase was to work on &lt;a href=&quot;https://github.com/jitsi/jitsi-meet&quot;&gt;Jitsi Meet&lt;/a&gt;
+which is the repository containing the front-end part of the application.&lt;/p&gt;
+
+&lt;h3 id=&quot;existing-code&quot;&gt;Existing Code&lt;/h3&gt;
+&lt;p&gt;One of my mentors &lt;a href=&quot;https://github.com/nikvaessen&quot;&gt;Nik Vaessen&lt;/a&gt; worked on
+Integrating Speech to Text as a GSoC student in 2016 and 2017.
+You can read more about his contributions &lt;a href=&quot;https://nikvaessen.github.io&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Nik made a pull request during the end of his coding period last summer for rendering
+subtitles in the form of a React Component. I picked up from where Nik had left
+and continued working on it.&lt;/p&gt;
+
+&lt;h3 id=&quot;my-work&quot;&gt;My Work&lt;/h3&gt;
+&lt;p&gt;I worked on the &lt;code class=&quot;highlighter-rouge&quot;&gt;transcription&lt;/code&gt; feature to enable displaying (nearly) real time transcription
+subtitles conference. So, currently the subtitles can be seen as follows :&lt;/p&gt;
+
+&lt;!-- Add youtube embed here --&gt;
+
+&lt;p&gt;I made a couple of pull requests to my mentor’s fork :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;https://github.com/nikvaessen/jitsi-meet/pull/2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;https://github.com/nikvaessen/jitsi-meet/pull/3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;whose changes reflect in the pull request in the main repository :&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;&quot;&gt;https://github.com/jitsi/jitsi-meet/pull/1914&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;technical-aspects---how-things-work-&quot;&gt;Technical aspects - How things work ?&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/jitsi/jigasi&quot;&gt;Jigasi&lt;/a&gt; - JItsi GAteway to SIP implements a speech to text
+service using &lt;a href=&quot;https://cloud.google.com/speech-to-text/&quot;&gt;Google Cloud Speech to Text&lt;/a&gt; and acts
+like a transciber by joining the meet room as a participant which receives the audio chunks of
+the participants and sends the transcribed message as the payload in a JSON format.&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;transcript&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;confidence&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Testing Speech to Text&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;is_interim&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;language&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;en-US&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;message_id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;8360900e-5fca-4d9c-baf3-6b24206dfbd7&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;event&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;SPEECH&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;participant&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Praveen&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;d14c8f32&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stability&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;timestamp&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;2017-06-24T11:04:05.637Z&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This payload once received by the conference, triggers an &lt;code class=&quot;highlighter-rouge&quot;&gt;ENDPOINT_MESSAGE_RECEIVED&lt;/code&gt;
+event listener which dispatches the &lt;code class=&quot;highlighter-rouge&quot;&gt;endpointMessageReceived&lt;/code&gt; action. After this an
+implemented middleware is responsible for using the payload recived to update the
+subtitles. The Redux state of &lt;code class=&quot;highlighter-rouge&quot;&gt;features/transcription&lt;/code&gt; contains a Map &lt;code class=&quot;highlighter-rouge&quot;&gt;transcriptionSubtitles&lt;/code&gt;
+of key value pairs which maps the message_id with the text.&lt;/p&gt;
+
+&lt;p&gt;The received &lt;code class=&quot;highlighter-rouge&quot;&gt;message_id&lt;/code&gt; is added to the Map if it does not exist in the keys, otherwise is
+updated with the stable and unstable components of the transcribed text. If it is perceived as
+a final messag, then a timeout is used to dipatch a &lt;code class=&quot;highlighter-rouge&quot;&gt;REMOVE_TRANSCRIPT_MESSAGE&lt;/code&gt; action which
+removes the key,value entry from the map after a defined period.&lt;/p&gt;
+
+&lt;p&gt;Finally &lt;code class=&quot;highlighter-rouge&quot;&gt;TranscriptionSubtitles.web.js&lt;/code&gt; uses this map as a Prop to re-render the transcription text
+paragraphs every time it gets updated and displays it accordingly :)&lt;/p&gt;
+
+&lt;h3 id=&quot;learning-outcomes&quot;&gt;Learning Outcomes&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Codebase : Became familiar with the large codebase and the different components involved.&lt;/li&gt;
+  &lt;li&gt;Basics of XMPP&lt;/li&gt;
+  &lt;li&gt;React-Redux&lt;/li&gt;
+  &lt;li&gt;Better version control&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;what-am-i-currently-working-on-&quot;&gt;What am I currently working on ?&lt;/h3&gt;
+&lt;p&gt;Currently the the transcibed message in JSON format is sent through the XMPP Message stanza 
+encapsulated in its body as follows :&lt;/p&gt;
+
+&lt;p&gt;I am working to improve this with a packet extension in Jitsi by encapsulating the JSON body
+in a &lt;code class=&quot;highlighter-rouge&quot;&gt;json-message&lt;/code&gt; element, so that the Jigasi sends the following XMPP Stanza :&lt;/p&gt;
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;message&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;json-message&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;https://www.jitsi.org/jitsi-meet&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+{
+  'type': 'transcription-result',
+  'transcript':[
+   {
+     'confidence':0,
+     'text':'Testing Stuff'
+   }
+  ],
+  'is_interim':true,
+  'language':'en-US',
+  'message_id':'8360900e-5fca-4d9c-baf3-6b24206dfbd7',
+  'event':'SPEECH',
+  'participant':{
+    'name':'Praveen',
+    'id':'2fe3ac1c'
+  },
+  'stability':0.009999999776482582,
+  'timestamp':'2017-08-21T14:35:46.342Z'
+}
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/json-message&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/message&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Praveen Gupta</name><email>pvgupta24@gmail.com</email></author><category term="gsoc" /><summary type="html">The first phase for the GSoC 2018 is coming to an end. Let me share my experience and contributions so far with this blog post :)</summary></entry></feed>
