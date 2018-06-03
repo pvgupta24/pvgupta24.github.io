@@ -1,0 +1,67 @@
+# The primary author of this blog.
+# Must be the same as `author` in `_config.yml`.
+# Change `author1` to your shortname.
+author1:
+  name:              Praveen Gupta
+  email:             pvgupta24@gmail.com
+
+  # Used at the bottom of each page and at the top of the `about` layout
+  # Markdown enabled, can use multiple paragraphs (enabled by `|`)
+  about:             |
+    Hi, I am **Praveen Kumar Gupta** or **@pvgupta24** and I am a pre-final year
+    undergraduate student at [*National Institue of Technology, Karnataka*](http://nitk.ac.in).
+
+    Driven by my passion for technology, I want to learn and explore more in the field :)
+
+  # This photo will be used in the about section
+  picture:
+    path:            https://media.licdn.com/dms/image/C4E03AQFUIsXf9od1FQ/profile-displayphoto-shrink_200_200/0?e=1533772800&v=beta&t=jO7hQl7MTM4FigLGQ1ckEivjnjKe46HZj2-wmt7_k3Y
+    #https://placehold.it/128x128
+    # srcset is optional, but can be used to provide higher res versions for retina displays
+    # srcset:
+    #   1x:            https://placehold.it/128x128
+    #   2x:            https://placehold.it/256x256
+
+  # Social media icons in sidebar
+  # Comment/uncomment to show/hide
+  # Rearrange to change the order in which they appear
+  social:
+    # twitter:         pvgupta24
+    github:          pvgupta24
+    email:           mailto:pvgupta24@gmail.com
+    # rss:             https://<url>/feed.xml
+    facebook:        pvgupta24
+    # google:          <number>
+    # vk:              <username>
+    # youtube:         <string_string_string>
+    # vimeo:           <username>
+    # vine:            <username>
+    # spotify:         <user>/<number>
+    # soundcloud:      <username>
+    # lastfm:          <username>
+    instagram:       pvgupta24
+    # flickr:          <string@string>
+    # 500px:           <username>
+    # dribbble:        <username>
+    # behance:         <username>
+    # deviantart:      <username>
+    # ello:            <username>
+    # twitch:          <username>
+    # steam:           <number>
+    # reddit:          <username>
+    # tumblr:          <username>
+    # pinterest:       <username>
+    # foursquare:      <number>
+    # yelp:            <string>
+    # stackoverflow:   <number/username>
+    # npm:             <username>
+    # hackernews:      <username>
+    # trello:          <firstnamelastname>
+    linkedin:        pvgupta24
+    # xing:            <firstname_lastname_counter>
+    # blogger:         <number>
+    # delicious:       <username>
+    # stumbleupon:     <username>
+    # paypal:          <username>
+    # download:        /assets/pdf/resume.pdf
+
