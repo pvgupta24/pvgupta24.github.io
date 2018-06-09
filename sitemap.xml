@@ -2,10 +2,14 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://pvgupta24.github.io/tag/gsoc/</loc>
-<lastmod>2018-06-09T04:04:39+05:30</lastmod>
+<lastmod>2018-06-10T03:40:58+05:30</lastmod>
 </url>
 <url>
-<loc>https://pvgupta24.github.io/2018/06/02/phase-1/</loc>
+<loc>https://pvgupta24.github.io/2018/05/02/gsoc18-phase-0/</loc>
+<lastmod>2018-05-02T00:00:00+05:30</lastmod>
+</url>
+<url>
+<loc>https://pvgupta24.github.io/2018/06/02/gsoc18-phase-1/</loc>
 <lastmod>2018-06-02T00:00:00+05:30</lastmod>
 </url>
 <url>

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://pvgupta24.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://pvgupta24.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2018-06-09T04:04:39+05:30</updated><id>https://pvgupta24.github.io/</id><title type="html">Praveen Gupta</title><subtitle>Personal Website of Praveen Kumar Gupta, computer engineering student of National Institute of Technology, Karnataka to showcase life experiences and other views.
-</subtitle><author><name>Praveen Gupta</name><email>pvgupta24@gmail.com</email></author><entry><title type="html">Phase 1 - Displaying Transcription Subtitles</title><link href="https://pvgupta24.github.io/2018/06/02/phase-1/" rel="alternate" type="text/html" title="Phase 1 - Displaying Transcription Subtitles" /><published>2018-06-02T00:00:00+05:30</published><updated>2018-06-02T00:00:00+05:30</updated><id>https://pvgupta24.github.io/2018/06/02/phase%201</id><content type="html" xml:base="https://pvgupta24.github.io/2018/06/02/phase-1/">&lt;p&gt;The first phase for the GSoC 2018 is coming to an end.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://pvgupta24.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://pvgupta24.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2018-06-10T03:40:58+05:30</updated><id>https://pvgupta24.github.io/</id><title type="html">Praveen Gupta</title><subtitle>Personal Website of Praveen Kumar Gupta, computer engineering student of National Institute of Technology, Karnataka to showcase life experiences and other views.
+</subtitle><author><name>Praveen Gupta</name><email>pvgupta24@gmail.com</email></author><entry><title type="html">Phase 1 - Displaying Transcription Subtitles</title><link href="https://pvgupta24.github.io/2018/06/02/gsoc18-phase-1/" rel="alternate" type="text/html" title="Phase 1 - Displaying Transcription Subtitles" /><published>2018-06-02T00:00:00+05:30</published><updated>2018-06-02T00:00:00+05:30</updated><id>https://pvgupta24.github.io/2018/06/02/gsoc18-phase-1</id><content type="html" xml:base="https://pvgupta24.github.io/2018/06/02/gsoc18-phase-1/">&lt;p&gt;The first phase for the GSoC 2018 is coming to an end.
 Let me share my experience and contributions so far with this blog post :)&lt;/p&gt;
 
 &lt;h2 id=&quot;what-did-i-work-on-&quot;&gt;What did I work on ?&lt;/h2&gt;
@@ -8,10 +8,9 @@ which is the repository containing the front-end part of the application.&lt;/p&
 
 &lt;h3 id=&quot;existing-code&quot;&gt;Existing Code&lt;/h3&gt;
 &lt;p&gt;One of my mentors &lt;a href=&quot;https://github.com/nikvaessen&quot;&gt;Nik Vaessen&lt;/a&gt; worked on
-Integrating Speech to Text as a GSoC student in 2016 and 2017.
-You can read more about his contributions &lt;a href=&quot;https://nikvaessen.github.io&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+Integrating Speech to Text as a GSoC student in 2016 and 2017.&lt;/p&gt;
 
-&lt;p&gt;Nik made a pull request during the end of his coding period last summer for rendering
+&lt;p&gt;Nik made a pull request at the end of his coding period last summer for rendering
 subtitles in the form of a React Component. I picked up from where Nik had left
 and continued working on it.&lt;/p&gt;
 
@@ -19,17 +18,16 @@ and continued working on it.&lt;/p&gt;
 &lt;p&gt;I worked on the &lt;code class=&quot;highlighter-rouge&quot;&gt;transcription&lt;/code&gt; feature to enable displaying (nearly) real time transcription
 subtitles conference. So, currently the subtitles can be seen as follows :&lt;/p&gt;
 
-&lt;!-- Add youtube embed here --&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/gsoc18-phase-1/subtitles.png&quot; alt=&quot;Subtitles&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I made a couple of pull requests to my mentor’s fork :&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;&quot;&gt;https://github.com/nikvaessen/jitsi-meet/pull/2&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;&quot;&gt;https://github.com/nikvaessen/jitsi-meet/pull/3&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/nikvaessen/jitsi-meet/pull/2&quot;&gt;https://github.com/nikvaessen/jitsi-meet/pull/2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/nikvaessen/jitsi-meet/pull/3&quot;&gt;https://github.com/nikvaessen/jitsi-meet/pull/3&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;whose changes reflect in the pull request in the main repository :&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;https://github.com/jitsi/jitsi-meet/pull/1914&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;whose changes reflect in the pull request in the main repository :&lt;br /&gt;
+&lt;a href=&quot;https://github.com/jitsi/jitsi-meet/pull/1914&quot;&gt;https://github.com/jitsi/jitsi-meet/pull/1914&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;technical-aspects---how-things-work-&quot;&gt;Technical aspects - How things work ?&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/jitsi/jigasi&quot;&gt;Jigasi&lt;/a&gt; - JItsi GAteway to SIP implements a speech to text
@@ -71,15 +69,15 @@ removes the key,value entry from the map after a defined period.&lt;/p&gt;
 &lt;p&gt;Finally &lt;code class=&quot;highlighter-rouge&quot;&gt;TranscriptionSubtitles.web.js&lt;/code&gt; uses this map as a Prop to re-render the transcription text
 paragraphs every time it gets updated and displays it accordingly :)&lt;/p&gt;
 
-&lt;h3 id=&quot;learning-outcomes&quot;&gt;Learning Outcomes&lt;/h3&gt;
+&lt;h3 id=&quot;challenges-faced-and-learning-outcomes&quot;&gt;Challenges faced and Learning Outcomes&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;Codebase : Became familiar with the large codebase and the different components involved.&lt;/li&gt;
-  &lt;li&gt;Basics of XMPP&lt;/li&gt;
-  &lt;li&gt;React-Redux&lt;/li&gt;
-  &lt;li&gt;Better version control&lt;/li&gt;
+  &lt;li&gt;Large Codebase : Became familiar with the codebase and the different components involved.&lt;/li&gt;
+  &lt;li&gt;Basics of XMPP : Learnt more about the XMPP standard for presence and messaging.&lt;/li&gt;
+  &lt;li&gt;React-Redux : Got familiar with the working of a react-redux applications&lt;/li&gt;
+  &lt;li&gt;Better version control : You can say that moved ahead from the &lt;em&gt;add, commit, push&lt;/em&gt; philosophy ;)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;what-am-i-currently-working-on-&quot;&gt;What am I currently working on ?&lt;/h3&gt;
+&lt;h2 id=&quot;what-am-i-currently-working-on-&quot;&gt;What am I currently working on ?&lt;/h2&gt;
 &lt;p&gt;Currently the the transcibed message in JSON format is sent through the XMPP Message stanza 
 encapsulated in its body as follows :&lt;/p&gt;
 
@@ -108,4 +106,66 @@ in a &lt;code class=&quot;highlighter-rouge&quot;&gt;json-message&lt;/code&gt; e
 }
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/json-message&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/message&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Praveen Gupta</name><email>pvgupta24@gmail.com</email></author><category term="gsoc" /><summary type="html">The first phase for the GSoC 2018 is coming to an end. Let me share my experience and contributions so far with this blog post :)</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;future-work&quot;&gt;Future Work&lt;/h2&gt;
+&lt;p&gt;Initially we decided on going with the client-side translations but after proper research
+in the available options, we decided to change it to server-side translations as :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Lack of free services.&lt;/li&gt;
+  &lt;li&gt;Requirement of authentication for the paid ones which may lead to abuse of the service
+and extra costs.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Server-Side Translations&lt;/strong&gt; will be helpful as :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;It will prevent misuse of paid translation services.&lt;/li&gt;
+  &lt;li&gt;The abstract implementation will allow for easily extending it with other external translation
+services as per choice and a locally setup service as well.&lt;/li&gt;
+  &lt;li&gt;Ease in preparing the final transcript of the meet in the required translated language.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Praveen Gupta</name><email>pvgupta24@gmail.com</email></author><category term="gsoc" /><summary type="html">The first phase for the GSoC 2018 is coming to an end. Let me share my experience and contributions so far with this blog post :)</summary></entry><entry><title type="html">Phase 0 - Selected for GSoC-2018 with Jitsi</title><link href="https://pvgupta24.github.io/2018/05/02/gsoc18-phase-0/" rel="alternate" type="text/html" title="Phase 0 - Selected for GSoC-2018 with Jitsi" /><published>2018-05-02T00:00:00+05:30</published><updated>2018-05-02T00:00:00+05:30</updated><id>https://pvgupta24.github.io/2018/05/02/gsoc18-phase-0</id><content type="html" xml:base="https://pvgupta24.github.io/2018/05/02/gsoc18-phase-0/">&lt;p&gt;&lt;em&gt;Phase 0&lt;/em&gt; because indexing starts with &lt;em&gt;ZERO&lt;/em&gt;. Period ;)&lt;/p&gt;
+
+&lt;h3 id=&quot;what-is-google-summer-of-code-&quot;&gt;What is Google Summer of Code ?&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;Google Summer of Code is a global program focused on bringing more student developers
+into open source software development. Students work with an open source organization on
+a 3 month programming project during their break from school/university.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;It is a program supported and funded by Google to support open source organisations where
+the mentors from the selected organisations provide guidance to the students and help them
+in contributing in the right direction.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-is-jitsi-&quot;&gt;What is Jitsi ?&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;Jitsi is a set of open-source projects that allows you to easily build and deploy secure
+videoconferencing solutions. At the heart of Jitsi are Jitsi Videobridge and Jitsi Meet, 
+which let you have conferences on the internet, while other projects in the community enable
+other features such as audio, dial-in, recording, and simulcasting.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;You can try out the platform from the browser here : &lt;a href=&quot;https://meet.jit.si/&quot;&gt;https://meet.jit.si/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;my-project-proposal&quot;&gt;My Project Proposal&lt;/h3&gt;
+&lt;p&gt;My major aim in the project proposal is to work on the transcription service in Jitsi-Meet
+integrate a translation module in it for real time transcription with translation.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/gsoc18-phase-0/jitsi-gsoc.png&quot; alt=&quot;Jitsi-GSoC&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;mentors&quot;&gt;Mentors&lt;/h3&gt;
+&lt;p&gt;I will be mentored by &lt;a href=&quot;https://github.com/bgrozev&quot;&gt;Boris Grozev&lt;/a&gt; and &lt;a href=&quot;https://github.com/nikvaessen&quot;&gt;Nik Vaessen&lt;/a&gt;.
+Nik was a GSoC student with Jitsi in the previous two summers and I will be working to
+improve and further extend his work.&lt;br /&gt;
+You can read more about his contributions in his blog &lt;a href=&quot;https://nikvaessen.github.io&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;community-bonding-period&quot;&gt;Community Bonding Period&lt;/h3&gt;
+&lt;p&gt;We have had a couple of video meets using the same platform to discuss more about the
+project. We are further discussing about the pros and cons of client-side translations
+vs. server-side translations to finalize it.&lt;/p&gt;
+
+&lt;p&gt;Development Environment is being setup along with a VM to support it for testing out
+changes separately.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Exciting summer ahead. Lets get started ;)&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Praveen Gupta</name><email>pvgupta24@gmail.com</email></author><category term="gsoc" /><summary type="html">Phase 0 because indexing starts with ZERO. Period ;)</summary></entry></feed>
