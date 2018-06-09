@@ -20,9 +20,11 @@
 
 {% assign font_heading = site.font_heading | default:"'Roboto Slab', Helvetica, Arial, sans-serif" %}
 {% assign font =         site.font         | default:"'Noto Sans', Helvetica, Arial, sans-serif" %}
+{% assign text_align =   site.text_align   | default:"justify" %}
 
 $font-family-heading: {{ font_heading }};
 $font-family: {{ font }};
+$text-justify: {{ text_align }};
 
 @import "variables";
 @import "my-variables";
@@ -71,6 +73,8 @@ $font-family: {{ font }};
       h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .heading {
         font-family: {{ font_heading }};
       }
+
+      text-align: {{ text_align }}
     }
   {% endunless %}
 {% else %}
@@ -109,6 +113,7 @@ $font-family: {{ font }};
 
   html {
     font-family: {{ font }};
+    text-align: {{ text_align }}
   }
 
   h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .heading {
