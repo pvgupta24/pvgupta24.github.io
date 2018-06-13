@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://pvgupta24.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://pvgupta24.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2018-06-10T03:40:58+05:30</updated><id>https://pvgupta24.github.io/</id><title type="html">Praveen Gupta</title><subtitle>Personal Website of Praveen Kumar Gupta, computer engineering student of National Institute of Technology, Karnataka to showcase life experiences and other views.
-</subtitle><author><name>Praveen Gupta</name><email>pvgupta24@gmail.com</email></author><entry><title type="html">Phase 1 - Displaying Transcription Subtitles</title><link href="https://pvgupta24.github.io/2018/06/02/gsoc18-phase-1/" rel="alternate" type="text/html" title="Phase 1 - Displaying Transcription Subtitles" /><published>2018-06-02T00:00:00+05:30</published><updated>2018-06-02T00:00:00+05:30</updated><id>https://pvgupta24.github.io/2018/06/02/gsoc18-phase-1</id><content type="html" xml:base="https://pvgupta24.github.io/2018/06/02/gsoc18-phase-1/">&lt;p&gt;The first phase for the GSoC 2018 is coming to an end.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://pvgupta24.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://pvgupta24.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2018-06-13T15:34:11+05:30</updated><id>https://pvgupta24.github.io/</id><title type="html">Praveen Gupta</title><subtitle>Personal Website of Praveen Kumar Gupta, computer engineering student of National Institute of Technology, Karnataka to showcase life experiences and other views.
+</subtitle><author><name>Praveen Gupta</name><email>pvgupta24@gmail.com</email></author><entry><title type="html">Phase 1 - Displaying Transcription Subtitles</title><link href="https://pvgupta24.github.io/2018/06/02/gsoc18-phase-1/" rel="alternate" type="text/html" title="Phase 1 - Displaying Transcription Subtitles" /><published>2018-06-02T00:00:00+05:30</published><updated>2018-06-02T00:00:00+05:30</updated><id>https://pvgupta24.github.io/2018/06/02/gsoc18-phase-1</id><content type="html" xml:base="https://pvgupta24.github.io/2018/06/02/gsoc18-phase-1/">&lt;p&gt;The first phase of GSoC 2018 is coming to an end.
 Let me share my experience and contributions so far with this blog post :)&lt;/p&gt;
 
-&lt;h2 id=&quot;what-did-i-work-on-&quot;&gt;What did I work on ?&lt;/h2&gt;
+&lt;h2 id=&quot;what-did-i-work-on&quot;&gt;What did I work on?&lt;/h2&gt;
 &lt;p&gt;My main task in this phase was to work on &lt;a href=&quot;https://github.com/jitsi/jitsi-meet&quot;&gt;Jitsi Meet&lt;/a&gt;
-which is the repository containing the front-end part of the application.&lt;/p&gt;
+which is the repository containing the front-end client of the application.&lt;/p&gt;
 
 &lt;h3 id=&quot;existing-code&quot;&gt;Existing Code&lt;/h3&gt;
 &lt;p&gt;One of my mentors &lt;a href=&quot;https://github.com/nikvaessen&quot;&gt;Nik Vaessen&lt;/a&gt; worked on
 Integrating Speech to Text as a GSoC student in 2016 and 2017.&lt;/p&gt;
 
 &lt;p&gt;Nik made a pull request at the end of his coding period last summer for rendering
-subtitles in the form of a React Component. I picked up from where Nik had left
+subtitles in the form of a React Component. I picked up from where Nik had left off 
 and continued working on it.&lt;/p&gt;
 
 &lt;h3 id=&quot;my-work&quot;&gt;My Work&lt;/h3&gt;
@@ -32,8 +32,9 @@ subtitles conference. So, currently the subtitles can be seen as follows :&lt;/p
 &lt;h3 id=&quot;technical-aspects---how-things-work-&quot;&gt;Technical aspects - How things work ?&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/jitsi/jigasi&quot;&gt;Jigasi&lt;/a&gt; - JItsi GAteway to SIP implements a speech to text
 service using &lt;a href=&quot;https://cloud.google.com/speech-to-text/&quot;&gt;Google Cloud Speech to Text&lt;/a&gt; and acts
-like a transciber by joining the meet room as a participant which receives the audio chunks of
-the participants and sends the transcribed message as the payload in a JSON format.&lt;/p&gt;
+like a transciber by joining the meet room as a participant. During the meeting Jigasi will
+receive the audio chunks ofthe participants, forward them to the Google API and send the transcribed
+message back the the participants in the JSON format seen below.&lt;/p&gt;
 
 &lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
     &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;transcript&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
@@ -55,75 +56,132 @@ the participants and sends the transcribed message as the payload in a JSON form
 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;This payload once received by the conference, triggers an &lt;code class=&quot;highlighter-rouge&quot;&gt;ENDPOINT_MESSAGE_RECEIVED&lt;/code&gt;
-event listener which dispatches the &lt;code class=&quot;highlighter-rouge&quot;&gt;endpointMessageReceived&lt;/code&gt; action. After this an
-implemented middleware is responsible for using the payload recived to update the
-subtitles. The Redux state of &lt;code class=&quot;highlighter-rouge&quot;&gt;features/transcription&lt;/code&gt; contains a Map &lt;code class=&quot;highlighter-rouge&quot;&gt;transcriptionSubtitles&lt;/code&gt;
-of key value pairs which maps the message_id with the text.&lt;/p&gt;
+&lt;p&gt;This payload, once received by the conference, triggers an &lt;code class=&quot;highlighter-rouge&quot;&gt;ENDPOINT_MESSAGE_RECEIVED&lt;/code&gt;
+event listener. This listener dispatches the &lt;code class=&quot;highlighter-rouge&quot;&gt;endpointMessageReceived&lt;/code&gt; redux action. The
+middleware function of the transcription feature listens for the &lt;code class=&quot;highlighter-rouge&quot;&gt;endpointMessageReceived&lt;/code&gt;
+action and is responsible for using the received payload to update the subtitles. The Redux
+state of &lt;code class=&quot;highlighter-rouge&quot;&gt;features/transcription&lt;/code&gt; contains a Map &lt;code class=&quot;highlighter-rouge&quot;&gt;transcriptionSubtitles&lt;/code&gt; of key value pairs
+which maps the message_id with the text.&lt;/p&gt;
 
-&lt;p&gt;The received &lt;code class=&quot;highlighter-rouge&quot;&gt;message_id&lt;/code&gt; is added to the Map if it does not exist in the keys, otherwise is
-updated with the stable and unstable components of the transcribed text. If it is perceived as
-a final messag, then a timeout is used to dipatch a &lt;code class=&quot;highlighter-rouge&quot;&gt;REMOVE_TRANSCRIPT_MESSAGE&lt;/code&gt; action which
-removes the key,value entry from the map after a defined period.&lt;/p&gt;
+&lt;p&gt;As the audio streams are continuously being sent to the Google API, we need to know when a
+continuous stream has ended and interpret the next one as a new message.
+For this to work, we use the detailed information received from the Google API which includes
+a field telling us if the particular transcript is an interim result or a final one.&lt;/p&gt;
 
-&lt;p&gt;Finally &lt;code class=&quot;highlighter-rouge&quot;&gt;TranscriptionSubtitles.web.js&lt;/code&gt; uses this map as a Prop to re-render the transcription text
+&lt;p&gt;In Jigasi, we use the same &lt;a href=&quot;https://searchmicroservices.techtarget.com/definition/UUID-Universal-Unique-Identifier&quot;&gt;UUID&lt;/a&gt;
+as its message_id to denote a particular message until we recieve a final stable message.&lt;/p&gt;
+
+&lt;p&gt;If the received message_id is not one among the keys in the Map, a pair of message_id
+and the participant name is added to the Map.&lt;/p&gt;
+
+&lt;p&gt;There are 3 scenarios when a message_id exists in the Map :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;If it is a final message, it is added as a final component in the Map value and a timeout is
+used to dipatch a &lt;code class=&quot;highlighter-rouge&quot;&gt;REMOVE_TRANSCRIPT_MESSAGE&lt;/code&gt; action which removes the key,value pair from the
+map after a defined period..&lt;/li&gt;
+  &lt;li&gt;If it is an interim message with high stability, it is added as a stable component in the Map.&lt;/li&gt;
+  &lt;li&gt;If it is an interim message with low stability, it is added as an unstable component in the Map.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;While displacying the particular message in the Component, either the final message is used as the text,
+or the stable and unstable components are concatenated and used as text.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;TranscriptionSubtitles.web.js&lt;/code&gt; Component uses the &lt;code class=&quot;highlighter-rouge&quot;&gt;Map&lt;/code&gt; as a Prop to re-render the transcription text
 paragraphs every time it gets updated and displays it accordingly :)&lt;/p&gt;
 
 &lt;h3 id=&quot;challenges-faced-and-learning-outcomes&quot;&gt;Challenges faced and Learning Outcomes&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;Large Codebase : Became familiar with the codebase and the different components involved.&lt;/li&gt;
-  &lt;li&gt;Basics of XMPP : Learnt more about the XMPP standard for presence and messaging.&lt;/li&gt;
-  &lt;li&gt;React-Redux : Got familiar with the working of a react-redux applications&lt;/li&gt;
-  &lt;li&gt;Better version control : You can say that moved ahead from the &lt;em&gt;add, commit, push&lt;/em&gt; philosophy ;)&lt;/li&gt;
+  &lt;li&gt;Large Codebase: Became familiar with the codebase and the different components involved.&lt;/li&gt;
+  &lt;li&gt;Basics of XMPP: Learnt more about the XMPP standard for presence and messaging.&lt;/li&gt;
+  &lt;li&gt;React-Redux: Got familiar with how a react-redux applications works&lt;/li&gt;
+  &lt;li&gt;Better version control: You can say I moved on from the &lt;em&gt;add, commit, push&lt;/em&gt; philosophy ;)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;what-am-i-currently-working-on-&quot;&gt;What am I currently working on ?&lt;/h2&gt;
-&lt;p&gt;Currently the the transcibed message in JSON format is sent through the XMPP Message stanza 
-encapsulated in its body as follows :&lt;/p&gt;
+&lt;p&gt;Currently the transcibed message in JSON format is sent through the XMPP Message stanza 
+encapsulated in its body as follows:&lt;/p&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;message&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    {
+      &quot;jitsi-meet-muc-msg-topic&quot;:&quot;transcription-result&quot;,
+        &quot;payload&quot;:{
+          &quot;transcript&quot;:[
+              {
+                &quot;confidence&quot;:0.0,
+                &quot;text&quot;:&quot;this is an example Json message&quot;
+              }
+          ],
+          &quot;is_interim&quot;:false,
+          &quot;language&quot;:&quot;en-US&quot;,
+          &quot;message_id&quot;:&quot;14fcde1c-26f8-4c03-ab06-106abccb510b&quot;,
+          &quot;event&quot;:&quot;SPEECH&quot;,
+          &quot;participant&quot;:{
+              &quot;name&quot;:&quot;Nik&quot;,
+              &quot;id&quot;:&quot;d62f8c36&quot;
+          },
+          &quot;stability&quot;:0.0,
+          &quot;timestamp&quot;:&quot;2017-08-24T11:04:05.637Z&quot;
+        }
+    }
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;/message
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;In this approach, we do not come to know that that the particular message received contains
+a JSON type message in its body unless we manually check the entire string in the message body
+to parse and check for a JSON type message.&lt;/p&gt;
+
+&lt;p&gt;This is not a very neat approach considering the fact that we are using the same data channel
+for sending multiple types of messages.&lt;/p&gt;
 
 &lt;p&gt;I am working to improve this with a packet extension in Jitsi by encapsulating the JSON body
 in a &lt;code class=&quot;highlighter-rouge&quot;&gt;json-message&lt;/code&gt; element, so that the Jigasi sends the following XMPP Stanza :&lt;/p&gt;
 &lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;message&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;json-message&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;https://www.jitsi.org/jitsi-meet&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-{
-  'type': 'transcription-result',
-  'transcript':[
-   {
-     'confidence':0,
-     'text':'Testing Stuff'
-   }
-  ],
-  'is_interim':true,
-  'language':'en-US',
-  'message_id':'8360900e-5fca-4d9c-baf3-6b24206dfbd7',
-  'event':'SPEECH',
-  'participant':{
-    'name':'Praveen',
-    'id':'2fe3ac1c'
-  },
-  'stability':0.009999999776482582,
-  'timestamp':'2017-08-21T14:35:46.342Z'
-}
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/json-message&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;json-message&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;https://www.jitsi.org/jitsi-meet&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    {
+      'type': 'transcription-result',
+      'transcript':[
+      {
+        'confidence':0,
+        'text':'Testing Stuff'
+      }
+      ],
+      'is_interim':true,
+      'language':'en-US',
+      'message_id':'8360900e-5fca-4d9c-baf3-6b24206dfbd7',
+      'event':'SPEECH',
+      'participant':{
+        'name':'Praveen',
+        'id':'2fe3ac1c'
+      },
+      'stability':0.009999999776482582,
+      'timestamp':'2017-08-21T14:35:46.342Z'
+    }
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/json-message&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/message&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;So we can see that the required JSON message will be encapsulated in its own packet which
+can be thought of as a container to hold json strings only. After this, we can simply
+check for the particular container in the &lt;code class=&quot;highlighter-rouge&quot;&gt;message&lt;/code&gt; stanza and interpret it as json message
+compared to the previous approach where one had to try to parse it first.&lt;/p&gt;
 
 &lt;h2 id=&quot;future-work&quot;&gt;Future Work&lt;/h2&gt;
 &lt;p&gt;Initially we decided on going with the client-side translations but after proper research
-in the available options, we decided to change it to server-side translations as :&lt;/p&gt;
+of the available options, we decided to change it to server-side translations due to:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Lack of free services.&lt;/li&gt;
   &lt;li&gt;Requirement of authentication for the paid ones which may lead to abuse of the service
 and extra costs.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;Server-Side Translations&lt;/strong&gt; will be helpful as :&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Server-Side Translations&lt;/strong&gt; will be helpful as:&lt;/p&gt;
 &lt;ul&gt;
+  &lt;li&gt;More secure as only the required audio will be translated.&lt;/li&gt;
   &lt;li&gt;It will prevent misuse of paid translation services.&lt;/li&gt;
   &lt;li&gt;The abstract implementation will allow for easily extending it with other external translation
 services as per choice and a locally setup service as well.&lt;/li&gt;
   &lt;li&gt;Ease in preparing the final transcript of the meet in the required translated language.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Praveen Gupta</name><email>pvgupta24@gmail.com</email></author><category term="gsoc" /><summary type="html">The first phase for the GSoC 2018 is coming to an end. Let me share my experience and contributions so far with this blog post :)</summary></entry><entry><title type="html">Phase 0 - Selected for GSoC-2018 with Jitsi</title><link href="https://pvgupta24.github.io/2018/05/02/gsoc18-phase-0/" rel="alternate" type="text/html" title="Phase 0 - Selected for GSoC-2018 with Jitsi" /><published>2018-05-02T00:00:00+05:30</published><updated>2018-05-02T00:00:00+05:30</updated><id>https://pvgupta24.github.io/2018/05/02/gsoc18-phase-0</id><content type="html" xml:base="https://pvgupta24.github.io/2018/05/02/gsoc18-phase-0/">&lt;p&gt;&lt;em&gt;Phase 0&lt;/em&gt; because indexing starts with &lt;em&gt;ZERO&lt;/em&gt;. Period ;)&lt;/p&gt;
+&lt;/ul&gt;</content><author><name>Praveen Gupta</name><email>pvgupta24@gmail.com</email></author><category term="gsoc" /><summary type="html">The first phase of GSoC 2018 is coming to an end. Let me share my experience and contributions so far with this blog post :)</summary></entry><entry><title type="html">Phase 0 - Selected for GSoC with Jitsi</title><link href="https://pvgupta24.github.io/2018/05/02/gsoc18-phase-0/" rel="alternate" type="text/html" title="Phase 0 - Selected for GSoC with Jitsi" /><published>2018-05-02T00:00:00+05:30</published><updated>2018-05-02T00:00:00+05:30</updated><id>https://pvgupta24.github.io/2018/05/02/gsoc18-phase-0</id><content type="html" xml:base="https://pvgupta24.github.io/2018/05/02/gsoc18-phase-0/">&lt;p&gt;&lt;em&gt;Phase 0&lt;/em&gt; because indexing starts with &lt;em&gt;ZERO&lt;/em&gt;. Period ;)&lt;/p&gt;
 
 &lt;h3 id=&quot;what-is-google-summer-of-code-&quot;&gt;What is Google Summer of Code ?&lt;/h3&gt;
 &lt;blockquote&gt;
@@ -147,7 +205,7 @@ other features such as audio, dial-in, recording, and simulcasting.&lt;/em&gt;&l
 &lt;p&gt;You can try out the platform from the browser here : &lt;a href=&quot;https://meet.jit.si/&quot;&gt;https://meet.jit.si/&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;my-project-proposal&quot;&gt;My Project Proposal&lt;/h3&gt;
-&lt;p&gt;My major aim in the project proposal is to work on the transcription service in Jitsi-Meet
+&lt;p&gt;My major aim in the project proposal is to improve the transcription service in Jitsi-Meet and
 integrate a translation module in it for real time transcription with translation.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/blog/gsoc18-phase-0/jitsi-gsoc.png&quot; alt=&quot;Jitsi-GSoC&quot; /&gt;&lt;/p&gt;
