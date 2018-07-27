@@ -1,5 +1,115 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://pvgupta24.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://pvgupta24.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2018-06-13T15:34:11+05:30</updated><id>https://pvgupta24.github.io/</id><title type="html">Praveen Gupta</title><subtitle>Personal Website of Praveen Kumar Gupta, computer engineering student of National Institute of Technology, Karnataka to showcase life experiences and other views.
-</subtitle><author><name>Praveen Gupta</name><email>pvgupta24@gmail.com</email></author><entry><title type="html">Phase 1 - Displaying Transcription Subtitles</title><link href="https://pvgupta24.github.io/2018/06/02/gsoc18-phase-1/" rel="alternate" type="text/html" title="Phase 1 - Displaying Transcription Subtitles" /><published>2018-06-02T00:00:00+05:30</published><updated>2018-06-02T00:00:00+05:30</updated><id>https://pvgupta24.github.io/2018/06/02/gsoc18-phase-1</id><content type="html" xml:base="https://pvgupta24.github.io/2018/06/02/gsoc18-phase-1/">&lt;p&gt;The first phase of GSoC 2018 is coming to an end.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://pvgupta24.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://pvgupta24.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2018-07-27T19:29:07+05:30</updated><id>https://pvgupta24.github.io/</id><title type="html">Praveen Gupta</title><subtitle>Personal Website of Praveen Kumar Gupta, computer engineering student of National Institute of Technology, Karnataka to showcase life experiences and other views.
+</subtitle><author><name>Praveen Gupta</name><email>pvgupta24@gmail.com</email></author><entry><title type="html">Phase 2 - Translating Transcription Messages</title><link href="https://pvgupta24.github.io/2018/07/14/gsoc18-phase-2/" rel="alternate" type="text/html" title="Phase 2 - Translating Transcription Messages" /><published>2018-07-14T00:00:00+05:30</published><updated>2018-07-14T00:00:00+05:30</updated><id>https://pvgupta24.github.io/2018/07/14/gsoc18-phase-2</id><content type="html" xml:base="https://pvgupta24.github.io/2018/07/14/gsoc18-phase-2/">&lt;p&gt;Here’s a brief summary of my work in the 2nd phase of GSoC 2018:&lt;/p&gt;
+
+&lt;h2 id=&quot;what-did-i-work-on&quot;&gt;What did I work on?&lt;/h2&gt;
+&lt;h3 id=&quot;json-message-extension&quot;&gt;Json Message Extension&lt;/h3&gt;
+&lt;p&gt;I continued working on a Message stanza extension element for sending the required
+json-messages in a different packet instead of sending it in the body of the message from
+Jigasi.
+Now, the transcription messages being sent look like this :&lt;/p&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;message&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;json-message&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    {
+      &quot;type&quot;:&quot;transcription-result&quot;,
+      &quot;transcript&quot;:[
+          {
+            &quot;confidence&quot;:0.0,
+            &quot;text&quot;:&quot;this is an example Json message&quot;
+          }
+      ],
+      &quot;is_interim&quot;:false,
+      &quot;language&quot;:&quot;en-US&quot;,
+      &quot;message_id&quot;:&quot;14fcde1c-26f8-4c03-ab06-106abccb510b&quot;,
+      &quot;event&quot;:&quot;SPEECH&quot;,
+      &quot;participant&quot;:{
+          &quot;name&quot;:&quot;Nik&quot;,
+          &quot;id&quot;:&quot;d62f8c36&quot;
+      },
+      &quot;stability&quot;:0.0,
+      &quot;timestamp&quot;:&quot;2017-08-24T11:04:05.637Z&quot;
+    }
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/json-message&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;/message
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This required the following changes in &lt;a href=&quot;https://github.com/jitsi/jitsi&quot;&gt;Jitsi&lt;/a&gt;
+and &lt;a href=&quot;https://github.com/jitsi/jigasi&quot;&gt;Jigasi&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jitsi/jitsi/pull/495&quot;&gt;https://github.com/jitsi/jitsi/pull/495&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jitsi/jigasi/pull/111&quot;&gt;https://github.com/jitsi/jigasi/pull/111&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Sending json-messages from the front end components required minor changes in
+&lt;a href=&quot;https://github.com/jitsi/lib-jitsi-meet&quot;&gt;lib-jitsi-meet&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jitsi/lib-jitsi-meet/pull/770&quot;&gt;https://github.com/jitsi/lib-jitsi-meet/pull/770&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;translation-layer&quot;&gt;Translation Layer&lt;/h3&gt;
+&lt;p&gt;I continued with adding an abstract translation layer for server side translations
+in Jigasi. An abstract translation service was added to use any required translation
+services and &lt;code class=&quot;highlighter-rouge&quot;&gt;GoogleCloudTranslate&lt;/code&gt; was implemented.&lt;/p&gt;
+
+&lt;p&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;TranslationManager&lt;/code&gt; which implemented a &lt;code class=&quot;highlighter-rouge&quot;&gt;TranscriptionListener&lt;/code&gt; was used to keep a
+count if the required languages for translation as per the participants in the conference.
+Once the &lt;code class=&quot;highlighter-rouge&quot;&gt;TranslationManager&lt;/code&gt; is notified of a final &lt;code class=&quot;highlighter-rouge&quot;&gt;TranslationResult&lt;/code&gt;, it uses the
+&lt;code class=&quot;highlighter-rouge&quot;&gt;TranslationService&lt;/code&gt; to get translations in all the required languages.
+We do not translate the interim messages because the it would lead to higher costs and we
+need the full context of a sentence for translations.
+All the translated results are then notified to the list of &lt;code class=&quot;highlighter-rouge&quot;&gt;TranslationResultListener&lt;/code&gt;s.&lt;/p&gt;
+
+&lt;p&gt;We do not publish the translation results in the Chatroom as it will flood it with translation
+results in different languages. We send th json-messages of the type &lt;code class=&quot;highlighter-rouge&quot;&gt;translation-result&lt;/code&gt; which
+can be parsed to show only the required results in the front-end. This json looks
+like this :&lt;/p&gt;
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;message&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;json-message&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    {
+      &quot;type&quot;:&quot;translation-result&quot;,
+      &quot;text&quot;:&quot;नमस्ते आप कैसे हैं?&quot;,
+      &quot;is_interim&quot;:false,
+      &quot;language&quot;:&quot;hi-IN&quot;,
+      &quot;message_id&quot;:&quot;14fcde1c-26f8-4c03-ab06-106abccb510b&quot;,
+      &quot;event&quot;:&quot;SPEECH&quot;,
+      &quot;participant&quot;:{
+          &quot;name&quot;:&quot;Praveen&quot;,
+          &quot;id&quot;:&quot;d62f8c36&quot;
+      },
+      &quot;stability&quot;:0.0,
+      &quot;timestamp&quot;:&quot;201-07-10T11:04:05.637Z&quot;
+    }
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/json-message&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;/message
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The next task was to send the preference from target language from the front-end.
+After discussions, we decided to use the presence stanza to send the language preference
+to Jigasi. This can be updated from the developer console in browser’s as of now with :
+&lt;code class=&quot;highlighter-rouge&quot;&gt;APP.conference._room.setLocalParticipantProperty('translation_language','hi');&lt;/code&gt;
+This triggers &lt;code class=&quot;highlighter-rouge&quot;&gt;JvbConference#memberPresenceChanged&lt;/code&gt;. We parse the target language using
+a custom presence stanza extension in &lt;code class=&quot;highlighter-rouge&quot;&gt;Jitsi&lt;/code&gt; and set this language preference for the
+participant with the given id and is added to the map of languages in &lt;code class=&quot;highlighter-rouge&quot;&gt;TranslationManager&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;This was enabled in the following PRs :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jitsi/jitsi/pull/504&quot;&gt;https://github.com/jitsi/jitsi/pull/504&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jitsi/jigasi/pull/124&quot;&gt;https://github.com/jitsi/jigasi/pull/124&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;what-am-i-currently-working-on-&quot;&gt;What am I currently working on ?&lt;/h2&gt;
+&lt;p&gt;I am currently working on using the json-messages of type &lt;code class=&quot;highlighter-rouge&quot;&gt;translation-result&lt;/code&gt; received
+in &lt;code class=&quot;highlighter-rouge&quot;&gt;Jitsi-Meet&lt;/code&gt; to display the final results as subtitles only in the specified language.&lt;/p&gt;
+
+&lt;h2 id=&quot;future-work&quot;&gt;Future Work&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;The souce language for transcription is harcoded to &lt;code class=&quot;highlighter-rouge&quot;&gt;en-US&lt;/code&gt; as of now. We initially decided
+to send this language with the dial made for the transcriber in the &lt;code class=&quot;highlighter-rouge&quot;&gt;iq&lt;/code&gt; stanza but now
+will be sent in a similar manner as that of the target language as it will allow us to set
+different source languages for each participant.&lt;/li&gt;
+  &lt;li&gt;The language preferences are set from the console as of now. UI elements to select the
+source and target languages from a list is to be designed.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Praveen Gupta</name><email>pvgupta24@gmail.com</email></author><category term="gsoc" /><summary type="html">Here’s a brief summary of my work in the 2nd phase of GSoC 2018:</summary></entry><entry><title type="html">Phase 1 - Displaying Transcription Subtitles</title><link href="https://pvgupta24.github.io/2018/06/02/gsoc18-phase-1/" rel="alternate" type="text/html" title="Phase 1 - Displaying Transcription Subtitles" /><published>2018-06-02T00:00:00+05:30</published><updated>2018-06-02T00:00:00+05:30</updated><id>https://pvgupta24.github.io/2018/06/02/gsoc18-phase-1</id><content type="html" xml:base="https://pvgupta24.github.io/2018/06/02/gsoc18-phase-1/">&lt;p&gt;The first phase of GSoC 2018 is coming to an end.
 Let me share my experience and contributions so far with this blog post :)&lt;/p&gt;
 
 &lt;h2 id=&quot;what-did-i-work-on&quot;&gt;What did I work on?&lt;/h2&gt;
