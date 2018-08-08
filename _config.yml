@@ -42,6 +42,9 @@ keywords:              [pvgupta24, NITK, Computer, Engineering]
 # Used by jekyll-seo-tag...
 logo:                  /assets/icons/favicon.png
 
+# If you want to serve future blog posts
+future: true
+
 # This should be the same author as first entry in `_data/authors.yml`.
 # Duplication is necessary due to the `jekyll-feed`, `jekyll-seo-tag` plugin.
 author:
