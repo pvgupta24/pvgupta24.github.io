@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://pvgupta24.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://pvgupta24.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2018-08-09T01:07:13+05:30</updated><id>https://pvgupta24.github.io/</id><title type="html">Praveen Gupta</title><subtitle>Personal Website of Praveen Kumar Gupta, computer engineering student of National Institute of Technology, Karnataka to showcase life experiences and other views.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://pvgupta24.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://pvgupta24.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2018-08-13T23:29:11+05:30</updated><id>https://pvgupta24.github.io/</id><title type="html">Praveen Gupta</title><subtitle>Personal Website of Praveen Kumar Gupta, computer engineering student of National Institute of Technology, Karnataka to showcase life experiences and other views.
 </subtitle><author><name>Praveen Gupta</name><email>pvgupta24@gmail.com</email></author><entry><title type="html">GSoC 2018 with Jitsi - Overview</title><link href="https://pvgupta24.github.io/2018/08/12/gsoc18-overview/" rel="alternate" type="text/html" title="GSoC 2018 with Jitsi - Overview" /><published>2018-08-12T00:00:00+05:30</published><updated>2018-08-12T00:00:00+05:30</updated><id>https://pvgupta24.github.io/2018/08/12/gsoc18-overview</id><content type="html" xml:base="https://pvgupta24.github.io/2018/08/12/gsoc18-overview/">&lt;p&gt;I was working on enabling translations to different languages with speech-to-text
 in &lt;a href=&quot;https://meet.jit.si/&quot;&gt;Jitsi-Meet&lt;/a&gt; as a part of GSoC 2018 this summer.&lt;/p&gt;
 
@@ -17,13 +17,34 @@ in near real time as subtitles.&lt;/p&gt;
 property &lt;code class=&quot;highlighter-rouge&quot;&gt;translation-result&lt;/code&gt; to the required language tag. In this case, the translated results
 in the specific language will be shown.&lt;/p&gt;
 
+&lt;iframe width=&quot;780&quot; height=&quot;500&quot; src=&quot;https://www.youtube.com/embed/aq8J_g9JgWs?rel=0&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;The final transcript of the entire meet is also prepared and stored as a &lt;code class=&quot;highlighter-rouge&quot;&gt;.txt&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;.json&lt;/code&gt; file locally
+on the server.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-txt&quot;&gt;Transcript of conference held at 12 Aug, 2018 in room GSoC-2018-Jitsi@conference.praveen.jitsi.net
+Initial people present at 7:35:13 AM:
+Praveen
+
+Transcript, started at 7:35:13 AM:
+________________________________________________________________________________
+&amp;lt;7:35:15 AM&amp;gt; Praveen joined the conference
+&amp;lt;7:35:17 AM&amp;gt; Praveen: 
+&amp;lt;7:35:26 AM&amp;gt; Praveen: नमस्ते 
+&amp;lt;7:35:39 AM&amp;gt; Praveen: आप कैसे हैं
+&amp;lt;7:36:11 AM&amp;gt; Praveen: आप उपशीर्षक में अनुवादित पाठ देख सकते हैं 
+________________________________________________________________________________
+
+
+End of transcript at 12 Aug, 2018 7:36:22 AM
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;h3 id=&quot;how-does-it-work-&quot;&gt;How does it work ?&lt;/h3&gt;
 &lt;p&gt;After the transcriber joins the Jitsi-Meet conference room as a participant, it starts the transcription
-using a transcription service (Currently &lt;a href=&quot;https://cloud.google.com/speech/&quot;&gt;Google Cloud Speech-to-text Service&lt;/a&gt;.&lt;/p&gt;
+using a transcription service (Currently &lt;a href=&quot;https://cloud.google.com/speech/&quot;&gt;Google Cloud Speech-to-text Service&lt;/a&gt;).&lt;/p&gt;
 
 &lt;p&gt;The results of transcription are forwarded to a Translation Manager which keeps track of the list of
 target languages for translation. If these are final transcription results, they are translated using
-the &lt;code class=&quot;highlighter-rouge&quot;&gt;Google Cloud Translation Service&lt;/code&gt; and sent to the Jitsi-Meet conference as JSON messages.&lt;/p&gt;
+the &lt;a href=&quot;https://cloud.google.com/translate&quot;&gt;Google Cloud Translation Service&lt;/a&gt; and sent to the Jitsi-Meet conference as JSON messages.&lt;/p&gt;
 
 &lt;p&gt;Jitsi-Meet receives the results in all languages and displays the ones which have the required language tag and ignores the other ones.
 Jigasi can be configured to send translation results as plain text messages in the Chatroom but it will flood the Chatroom with messages.&lt;/p&gt;
@@ -34,8 +55,7 @@ Jigasi can be configured to send translation results as plain text messages in t
 &lt;h4 id=&quot;jigasi&quot;&gt;&lt;a href=&quot;https://github.com/jitsi/jigasi&quot;&gt;Jigasi&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;When the &lt;a href=&quot;https://github.com/jitsi/jigasi/blob/master/src/main/java/org/jitsi/jigasi/transcription/Transcriber.java&quot;&gt;Transcriber&lt;/a&gt; joins a conference, it creates a &lt;a href=&quot;https://github.com/jitsi/jigasi/blob/master/src/main/java/org/jitsi/jigasi/transcription/TranslationManager.java&quot;&gt;TranslationManager&lt;/a&gt; object with a &lt;a href=&quot;https://github.com/jitsi/jigasi/blob/master/src/main/java/org/jitsi/jigasi/transcription/TranslationService.java&quot;&gt;TranslationService&lt;/a&gt;.
 Currently &lt;a href=&quot;https://github.com/jitsi/jigasi/blob/master/src/main/java/org/jitsi/jigasi/transcription/GoogleCloudTranslationService.java&quot;&gt;GoogleCloudTranslationService&lt;/a&gt; is used but other services can be used by implementing &lt;code class=&quot;highlighter-rouge&quot;&gt;TranslationService&lt;/code&gt;.
-The &lt;code class=&quot;highlighter-rouge&quot;&gt;TranslationManager&lt;/code&gt; keeps a list of &lt;a href=&quot;https://github.com/jitsi/jigasi/blob/master/src/main/java/org/jitsi/jigasi/transcription/TranslationResultListener.java&quot;&gt;TranslationResultListener&lt;/a&gt;, which is an interface
-which can be used to decide the way the translation results are to be used.&lt;/p&gt;
+The &lt;code class=&quot;highlighter-rouge&quot;&gt;TranslationManager&lt;/code&gt; keeps a list of &lt;a href=&quot;https://github.com/jitsi/jigasi/blob/master/src/main/java/org/jitsi/jigasi/transcription/TranslationResultListener.java&quot;&gt;TranslationResultListener&lt;/a&gt;, which is an interface which can be used to decide the way the translation results are to be used.&lt;/p&gt;
 
 &lt;p&gt;Once a user changes the preference for the required language in Jitsi Meet, a presence update is notified to the connected participants
 including the transcriber &lt;a href=&quot;https://github.com/jitsi/jigasi/blob/master/src/main/java/org/jitsi/jigasi/JvbConference.java#L778&quot;&gt;here&lt;/a&gt;.
@@ -43,8 +63,7 @@ This is parsed &lt;a href=&quot;https://github.com/jitsi/jigasi/blob/master/src/
 to get the participant and the language tag (either source language which is ‘en-US’ by default or target language for the participant) and is notified to the TranslationManager which keeps a count of the participants who need a particular language.
 If no more participants need a language, it is removed from the list of languages.&lt;/p&gt;
 
-&lt;p&gt;Once a TranscriptionResult is formed, the manager is notified about it which uses the translation service to translate in all the required objects
-and makes a &lt;a href=&quot;https://github.com/jitsi/jigasi/blob/master/src/main/java/org/jitsi/jigasi/transcription/TranslationResult.java&quot;&gt;TranslationResult&lt;/a&gt;
+&lt;p&gt;Once a TranscriptionResult is formed, the manager is notified about it which uses the translation service to translate in all the required objects and makes a &lt;a href=&quot;https://github.com/jitsi/jigasi/blob/master/src/main/java/org/jitsi/jigasi/transcription/TranslationResult.java&quot;&gt;TranslationResult&lt;/a&gt;
 for each of the language and notifies all the &lt;a href=&quot;https://github.com/jitsi/jigasi/blob/master/src/main/java/org/jitsi/jigasi/transcription/TranslationResultListener.java&quot;&gt;TranslationResultListener&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The &lt;a href=&quot;https://github.com/jitsi/jigasi/blob/master/src/main/java/org/jitsi/jigasi/transcription/LocalJsonTranscriptHandler.java#L236&quot;&gt;LocalJsonTranscriptHandler&lt;/a&gt; sends the json of the type &lt;code class=&quot;highlighter-rouge&quot;&gt;translation-result&lt;/code&gt; to the conference where it is interpreted accordingly.&lt;/p&gt;
@@ -56,9 +75,20 @@ for each of the language and notifies all the &lt;a href=&quot;https://github.co
   &lt;li&gt;&lt;a href=&quot;https://github.com/jitsi/jigasi/pull/127&quot;&gt;https://github.com/jitsi/jigasi/pull/127&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;I also sent a PR towards the end of the coding period for storing the final transcript
+of the meet in all the requested target languages.
+The translations are stored in a map in the &lt;a href=&quot;https://github.com/jitsi/jigasi/blob/master/src/main/java/org/jitsi/jigasi/transcription/Transcript.java&quot;&gt;Transcript&lt;/a&gt;.
+After a meet is over or the Transcriber is kicked out, the translations are accumulated and formatted,
+by translating the transcription speech events whose translations aren’t present yet.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jitsi/jigasi/pull/130&quot;&gt;https://github.com/jitsi/jigasi/pull/130&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h4 id=&quot;jitsi&quot;&gt;&lt;a href=&quot;https://github.com/jitsi/jitsi&quot;&gt;Jitsi&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;We needed to add few extensions to the XMPP stanzas :
-Message extension for sending the json messages in a different container (than the body which was used previously)&lt;/p&gt;
+&lt;p&gt;We needed to add few extensions to the XMPP stanzas :&lt;/p&gt;
+
+&lt;p&gt;Message extension for sending the json messages in a different container (than the body which was used previously)&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/jitsi/jitsi/pull/509&quot;&gt;https://github.com/jitsi/jitsi/pull/509&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -72,7 +102,7 @@ Message extension for sending the json messages in a different container (than t
 &lt;h4 id=&quot;jitsi-meet&quot;&gt;&lt;a href=&quot;https://github.com/jitsi/jitsi-meet&quot;&gt;Jitsi-Meet&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;As discussed in the first blog post, I worked on the react feature subtitles (renamed from transcription) to display
 transcription messages as subtitles. It was then extended to show the translation results if a target language is selected
-from the console with &lt;code class=&quot;highlighter-rouge&quot;&gt;APP.conference._room.setLocalParticipantProperty('translation_language','hi-IN');&lt;/code&gt; in which case it
+from the console with &lt;code class=&quot;highlighter-rouge&quot;&gt;APP.conference._room.setLocalParticipantProperty('translation_language','hi');&lt;/code&gt; in which case it
 uses the json-message  of type translation-result:&lt;/p&gt;
 &lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;message&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;json-message&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
@@ -101,7 +131,7 @@ uses the json-message  of type translation-result:&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Note that the source language can be set in a similar way
-&lt;code class=&quot;highlighter-rouge&quot;&gt;APP.conference._room.setLocalParticipantProperty('transcription_language','hi-in');&lt;/code&gt;&lt;/p&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;APP.conference._room.setLocalParticipantProperty('transcription_language','hi-IN');&lt;/code&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;lib-jitsi-meet&quot;&gt;&lt;a href=&quot;https://github.com/jitsi/lib-jitsi-meet&quot;&gt;Lib-Jitsi-Meet&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;Small changes were required in the lower level JS library used by Jitsi Meet to parse and send json-messages in a 
@@ -125,6 +155,9 @@ transcription and target language for translations.&lt;/li&gt;
 as it will flood the chatbox with speech-to-text results in translated languages. Another persistant
 UI element to display the translated results in desired languages can be helpful for people joining
 the conference at a later stage to go through the past events in the desired language.&lt;/li&gt;
+  &lt;li&gt;Sending the final transcript in target languages to the fron-end client after a meet gets over.&lt;/li&gt;
+  &lt;li&gt;Making the option to store final transcripts in all target languages configurable.&lt;/li&gt;
+  &lt;li&gt;As the work hasn’t been tested heavily, it is prone to having minor bugs which needs to be fixed.&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>Praveen Gupta</name><email>pvgupta24@gmail.com</email></author><category term="gsoc" /><summary type="html">I was working on enabling translations to different languages with speech-to-text in Jitsi-Meet as a part of GSoC 2018 this summer.</summary></entry><entry><title type="html">Phase 2 - Translating Transcription Messages</title><link href="https://pvgupta24.github.io/2018/07/14/gsoc18-phase-2/" rel="alternate" type="text/html" title="Phase 2 - Translating Transcription Messages" /><published>2018-07-14T00:00:00+05:30</published><updated>2018-07-14T00:00:00+05:30</updated><id>https://pvgupta24.github.io/2018/07/14/gsoc18-phase-2</id><content type="html" xml:base="https://pvgupta24.github.io/2018/07/14/gsoc18-phase-2/">&lt;p&gt;Here’s a brief summary of my work in the 2nd phase of GSoC 2018:&lt;/p&gt;
 
 &lt;h2 id=&quot;what-did-i-work-on&quot;&gt;What did I work on?&lt;/h2&gt;
