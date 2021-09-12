@@ -4,6 +4,7 @@ title: GSoC 2018 with Jitsi - Overview
 description: >
   Overview of work done during the Google Summer of Code 2018 with Jitsi.
 tags: [gsoc]
+permalink: /:categories/:year/:month/:day/:title/
 ---
 
 I was working on enabling translations to different languages with speech-to-text

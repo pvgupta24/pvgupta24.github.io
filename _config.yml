@@ -27,16 +27,14 @@ title:                 Praveen Gupta
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  Personal Website of Praveen Kumar Gupta, computer engineering
-  student of National Institute of Technology, Karnataka to showcase
-  life experiences and other views.
+  Personal Website of Praveen Kumar Gupta
 
 # A shorter description for the sidebar.
 tagline:               >
   *Code &#124; Travel &#124; Music*
 
 # A list of keywords for your blog
-keywords:              [pvgupta24, NITK, Computer, Engineering]
+keywords:              [pvgupta24, NITK, MSR, CSE, Systems]
 
 # Used by jekyll-seo-tag...
 logo:                  /assets/icons/favicon.png
@@ -64,7 +62,7 @@ copyright:             Copyright © 2018. Praveen Kumar Gupta.
 #     href:              /cookies-policy/
 
 # Format of the permalinks
-permalink:             pretty
+permalink:             none
 
 # Pagination configuration (used by the `blog` layout)
 paginate:              5
@@ -221,8 +219,8 @@ plugins:
 #   yandex:              <verification-id>
 
 # Used for Twitter cards
-# twitter:
-#   username:            <shortname>
+twitter:
+  username:            pvgupta24
 
 # Used for Facebook open graph
 # facebook:
