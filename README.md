@@ -13,3 +13,8 @@ Compiled Code for Deployment
 Development Code
 
 > This is built using jekyll and hydejack which works on poole - the jekyll butler.
+
+### Setting up
+- Setup using `https://hydejack.com/docs/`
+- Launch dev server using `bundle exec jekyll serve`
+- Generate a static build using `JEKYLL_ENV=production bundle exec jekyll build`

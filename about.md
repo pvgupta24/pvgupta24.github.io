@@ -16,11 +16,6 @@ order: 1
 
 ---
 
-**Personal Mission:** The pandemic has shed light on the massive differences in privilege among people. There are people having the choice of working in the safety of their home, while there are many who depend on daily wages outdoors and can't afford to stay inside. There are countries who can afford to buy multiple vaccines in development, while others with no access to vaccines.
-Today, the world is more divide than ever before on the smallest of the issues, while global problems like the pandemic, global warming, terrorism, poverty and hunger requires collaborative solutions.
-
-I want to have an impact on making the world a better and inclusive place for everyone. This can be a direct effect of my passion for using technology to work on today's real world problem or indirect ways by guiding folks on better paths and habits.
-
 **Hobbies:**
 During my off hours, I will probably be playing outdoor games, Valorant, travelling to some natural landscapes, listening to music or irritating my friends.
 I enjoy reading fiction, and have interests in history and businesses.
