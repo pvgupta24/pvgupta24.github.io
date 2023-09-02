@@ -23,7 +23,7 @@ Compile a pdf of as much documents as you can in advance as the houses are rente
 - **Proof of Funds**: Bank Statements (All countries), Job Offer letter/ Payslips, Credit Report, GIC
 - **References with Contact**: Past employers, Past landlords, Past roommates?
 
-### Step-2: Arrive early for house hunting
+### Step-3: Arrive early for house hunting
 House hunting can be a full-time job, and you don't want to be stuck temporarily when the term starts.
 - Try to arrive a month in advance. Get a sublet in on-campus dorms if needed.
 - Don't finalize a place without seeing it first, as some listings may be scams or misleading.
@@ -31,7 +31,7 @@ House hunting can be a full-time job, and you don't want to be stuck temporarily
 - Send messages or emails to hundreds of listings and prepare a short template to save time. For existing renters seeking new roomates, use this to convey that your are a good fit based on the listing description. Seems like job hunting at this point :P
 - Keep track of your viewings on a calendar, and search on [major commute lines](https://students.ubc.ca/sites/students.ubc.ca/files/Buses_from_UBC_Exchange.pdf).
 
-### Step-3: Find others with your level of desperation
+### Step-4: Find others with your level of desperation
 ![Apes-Meme](https://media.tenor.com/Cea-Hbq5qwUAAAAd/apes-together-strong-monkey.gif)
 
 The first time you go for a house viewing, you will see a long queue of students ready to take whatever housing is available at any nonsensical price (and hence these prices continue). This is gonna be a "networking opportunity" to get a gang together to look for houses. Alternatively, you can also post on facebook housing groups for the area and find like-minded folks to team up with with similar constraints & preferences. It's important to find quality roommates as they will have a significant impact on your life. There is higher competition for smaller houses, so you might get lucky with a larger group. Dividing the house viewing visits is added bonus, and ofc you will have friends to cry together when you are unable to find one :P

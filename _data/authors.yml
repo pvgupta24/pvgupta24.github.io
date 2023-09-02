@@ -8,9 +8,7 @@ author1:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
-    Hi, I am **Praveen Gupta [@pvgupta24]**. I am interested in large scale systems that can impact people across the globe.
-    I am currently a Graduate Researcher at The University of British Columbia. Prior to this I worked as a [Research Fellow](https://www.microsoft.com/en-us/research/academic-program/research-fellows-program-at-microsoft-research-india),
-    at Microsoft Research. [Read more...](/about)
+    **Praveen Gupta [@pvgupta24]** is a Graduate Researcher at The University of British Columbia interested in challenges with managing data in the cloud. [Read more...](/)
 
   # This photo will be used in the about section
   picture:
