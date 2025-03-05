@@ -18,3 +18,15 @@ Development Code
 - Setup using `https://hydejack.com/docs/`
 - Launch dev server using `bundle exec jekyll serve`
 - Generate a static build using `JEKYLL_ENV=production bundle exec jekyll build`
+
+### Automated Deployment
+This repository uses GitHub Actions for automated deployment:
+
+1. Make changes to the site in the `dev` branch
+2. Commit and push your changes to GitHub
+3. GitHub Actions will automatically:
+   - Build the Jekyll site with production settings
+   - Deploy the built site to the `master` branch
+   - The site will be live at pvgupta24.github.io
+
+The workflow configuration is located in `.github/workflows/jekyll.yml`
