@@ -15,9 +15,9 @@ author1:
     path:            https://drive.google.com/uc?id=1wc7yvakE8zgS2Yov7xraqPUBF2YNZXY-
     #https://placehold.it/128x128
     # srcset is optional, but can be used to provide higher res versions for retina displays
-    # srcset:
-    #   1x:            https://placehold.it/128x128
-    #   2x:            https://placehold.it/256x256
+    srcset:
+      1x:            https://drive.google.com/uc?id=1wc7yvakE8zgS2Yov7xraqPUBF2YNZXY-
+      2x:            https://drive.google.com/uc?id=1wc7yvakE8zgS2Yov7xraqPUBF2YNZXY-
 
   # Social media icons in sidebar
   # Comment/uncomment to show/hide
@@ -61,4 +61,3 @@ author1:
     # stumbleupon:     <username>
     # paypal:          <username>
     # download:        /assets/pdf/resume.pdf
-

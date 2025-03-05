@@ -1,4 +1,4 @@
-name: Auto build and publish Jekyll site to target branch
+name: Auto build and publish Jekyll site to master branch
 
 on:
   push:
@@ -7,20 +7,38 @@ on:
 
 jobs:
   jekyll:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
     # Use GitHub Actions' cache to shorten build times and decrease load on servers
-    - uses: actions/cache@v2
+    - name: Setup cache
+      uses: actions/cache@v3
       with:
         path: vendor/bundle
         key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
         restore-keys: |
           ${{ runner.os }}-gems-
 
-    # Standard usage
-    - uses:  helaili/jekyll-action@v2
+    # Setup Ruby and Bundler
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1
       with:
+        ruby-version: '3.0'
+        bundler-cache: true
+
+    # Build Jekyll site with production environment
+    - name: Build Jekyll site
+      run: |
+        bundle install
+        JEKYLL_ENV=production bundle exec jekyll build
+
+    # Deploy to master branch
+    - name: Deploy to master
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        branch: master
+        folder: _site
         token: ${{ secrets.GITHUB_TOKEN }}
-        target_branch: 'gh-pages'
+        clean: true
