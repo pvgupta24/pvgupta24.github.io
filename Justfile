@@ -10,16 +10,17 @@ install:
     bundle install
 
 # Serve with fast dev config (livereload + incremental + skip inline CSS)
+# --force_polling needed on Windows for reliable file watching
 serve:
-    bundle exec jekyll serve --livereload --incremental --config _config.yml,_config_dev.yml
+    bundle exec jekyll serve --livereload --force_polling --incremental --config _config.yml,_config_dev.yml
 
 # Serve with production config
 serve-prod:
-    bundle exec jekyll serve --livereload
+    bundle exec jekyll serve --livereload --force_polling
 
 # Serve including draft posts
 drafts:
-    bundle exec jekyll serve --drafts --livereload --incremental --config _config.yml,_config_dev.yml
+    bundle exec jekyll serve --drafts --livereload --force_polling --incremental --config _config.yml,_config_dev.yml
 
 # Build for production
 build:

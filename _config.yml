@@ -51,7 +51,7 @@ author:
   # twitter:             pvgupta24
 
 # This text will appear in a `<small>` tag in the footer of every page.
-# copyright:             Copyright © 2018. Praveen Gupta.
+copyright:             "Copyright &copy; 2024 Praveen Gupta"
 
 # Add links to the footer.
 # Typically you'll want to link to your impress, cookies or privacy policy, etc.
@@ -178,6 +178,13 @@ exclude:
   - node_modules
   - package.json
   - package-lock.json
+  - Justfile
+  - CLAUDE.md
+  - _config_dev.yml
+  - .claude
+  - .sass-cache
+  - .jekyll-cache
+  - "*.js.map"
 include:
   - LICENSE.md
 

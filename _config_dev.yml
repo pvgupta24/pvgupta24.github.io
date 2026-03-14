@@ -1,0 +1,9 @@
+# Development overrides — merged on top of _config.yml
+# Usage: bundle exec jekyll serve --config _config.yml,_config_dev.yml
+
+hydejack:
+  no_inline_css: true    # Skip expensive inline CSS processing in dev
+
+compress_html:
+  clippings: []
+  endings: []
