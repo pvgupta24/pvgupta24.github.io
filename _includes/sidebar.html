@@ -11,6 +11,14 @@
 
     <div class="sidebar-sticky">
       <div class="sidebar-about" style="text-align: center">
+        {% assign _author = site.data.authors.first[1] | default:site.author %}
+        {% if _author.picture %}
+          <a href="{{ '/' | relative_url }}" class="sidebar-avatar-link">
+            <img class="sidebar-avatar"
+                 src="{{ _author.picture.path }}"
+                 alt="{{ _author.name }}" />
+          </a>
+        {% endif %}
         <h2 class="h1"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h2>
         {% assign text = site.tagline | default:site.description %}
         {% if text %}

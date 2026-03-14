@@ -1,3 +1,31 @@
+// Sidebar avatar
+.sidebar-avatar-link {
+  display: block;
+  margin-bottom: 1rem;
+  border-bottom: none !important;  // override .sidebar a border-bottom underline
+}
+
+.sidebar-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  display: block;
+  margin: 0 auto;
+}
+
+// Remove the divider line between sidebar-about and nav
+.sidebar-about {
+  border-bottom: none !important;
+  margin-bottom: 0;
+}
+
+// Remove top border on first nav item so there's no awkward line after the avatar
+.sidebar-nav > ul > li:first-child > a {
+  border-top: none !important;
+}
+
 // Uncomment below to remove border radius on projects and pagination items (pre v6.5)
 /*
 .card, .pagination-item {

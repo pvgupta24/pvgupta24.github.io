@@ -1,0 +1,10 @@
+// Resume embed
+.resume-embed {
+  iframe {
+    width: 100%;
+    height: 100vh;
+    min-height: 500px;
+    border: solid 1px #ccc;
+    display: block;
+  }
+}
