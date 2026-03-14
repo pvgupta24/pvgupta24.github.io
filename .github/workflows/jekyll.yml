@@ -8,20 +8,13 @@ on:
 jobs:
   jekyll:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
-    # Use GitHub Actions' cache to shorten build times and decrease load on servers
-    - name: Setup cache
-      uses: actions/cache@v3
-      with:
-        path: vendor/bundle
-        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
-        restore-keys: |
-          ${{ runner.os }}-gems-
-
-    # Setup Ruby and Bundler
+    # Setup Ruby and Bundler (handles gem caching automatically)
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
@@ -30,9 +23,7 @@ jobs:
 
     # Build Jekyll site with production environment
     - name: Build Jekyll site
-      run: |
-        bundle install
-        JEKYLL_ENV=production bundle exec jekyll build
+      run: JEKYLL_ENV=production bundle exec jekyll build
 
     # Deploy to master branch
     - name: Deploy to master
